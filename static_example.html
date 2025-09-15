@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI IQ Test Results - John Smith</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-shadow { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- User Data Embedded for Vapi Widget -->
+    <script>
+        window.testResults = {
+            contactName: "John Smith",
+            contactId: "contact_12345",
+            sessionId: "session_67890", 
+            totalScore: 125,
+            subscriptionLevel: "advanced", // free, basic, advanced
+            testDate: "2025-09-15",
+            categories: {
+                "Strategic Thinking": { score: 85, max: 100 },
+                "Market Analysis": { score: 92, max: 100 },
+                "Innovation Capacity": { score: 78, max: 100 },
+                "Risk Assessment": { score: 88, max: 100 },
+                "Leadership Potential": { score: 82, max: 100 }
+            },
+            recommendations: [
+                "Focus on innovation frameworks to boost creative problem-solving",
+                "Develop systematic market research methodologies", 
+                "Strengthen risk mitigation strategies for better decision-making"
+            ],
+            roiAnalysis: {
+                potentialGains: "$250,000 annually",
+                implementationCost: "$15,000",
+                paybackPeriod: "3.2 months"
+            }
+        };
+    </script>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold mb-2">AI IQ Test Results</h1>
+            <p class="text-xl opacity-90">Personalized Business Intelligence Report</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12 max-w-4xl">
+        
+        <!-- Welcome Section -->
+        <div class="bg-white rounded-lg card-shadow p-8 mb-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Welcome, <span id="user-name">John Smith</span></h2>
+                <div class="inline-block bg-blue-100 rounded-full px-6 py-3 mb-6">
+                    <span class="text-2xl font-bold text-blue-800">Your AI IQ Score: <span id="total-score">125</span></span>
+                </div>
+                <p class="text-lg text-gray-600 mb-6">You scored in the <strong>Above Average</strong> range</p>
+                
+                <!-- Subscription Level Content -->
+                <div id="subscription-content">
+                    <!-- Advanced Level Content -->
+                    <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg p-6 mb-6">
+                        <h3 class="text-xl font-bold mb-2">🔥 Advanced Analysis Unlocked</h3>
+                        <p>Complete comprehensive report with 8+ AI analyses, ROI projections, and implementation roadmap</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Test Categories -->
+        <div class="bg-white rounded-lg card-shadow p-8 mb-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Category Breakdown</h3>
+            <div class="grid md:grid-cols-2 gap-6" id="categories-grid">
+                <!-- Categories will be populated by script -->
+            </div>
+        </div>
+
+        <!-- ROI Analysis -->
+        <div class="bg-white rounded-lg card-shadow p-8 mb-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">ROI Analysis</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center p-4 bg-green-50 rounded-lg">
+                    <h4 class="font-bold text-green-800 mb-2">Potential Annual Gains</h4>
+                    <p class="text-2xl font-bold text-green-600" id="potential-gains">$250,000</p>
+                </div>
+                <div class="text-center p-4 bg-blue-50 rounded-lg">
+                    <h4 class="font-bold text-blue-800 mb-2">Implementation Cost</h4>
+                    <p class="text-2xl font-bold text-blue-600" id="implementation-cost">$15,000</p>
+                </div>
+                <div class="text-center p-4 bg-purple-50 rounded-lg">
+                    <h4 class="font-bold text-purple-800 mb-2">Payback Period</h4>
+                    <p class="text-2xl font-bold text-purple-600" id="payback-period">3.2 months</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommendations -->
+        <div class="bg-white rounded-lg card-shadow p-8 mb-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6">Top Recommendations</h3>
+            <div class="space-y-4" id="recommendations-list">
+                <!-- Recommendations populated by script -->
+            </div>
+        </div>
+
+        <!-- AI Transformation Agent -->
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg p-8 text-center mb-8">
+            <h3 class="text-2xl font-bold mb-4">🤖 Discuss Your Results</h3>
+            <p class="text-lg mb-6">Chat with our AI Transformation Agent about your specific results, ask questions, and get personalized guidance.</p>
+            
+            <!-- Vapi Widget Placeholder -->
+            <div id="vapi-widget-container" class="bg-white/10 rounded-lg p-6 mb-6">
+                <p class="mb-4">AI Agent will load here with your test context:</p>
+                <div class="text-sm opacity-80 text-left bg-black/20 rounded p-3">
+                    User: John Smith | Score: 125 | Level: Advanced<br>
+                    Context: Full access to test results and recommendations
+                </div>
+                
+                <!-- This is where the actual Vapi widget would be embedded -->
+                <div class="mt-4 p-4 bg-white/20 rounded">
+                    <p class="text-sm">🎤 Vapi Voice/Chat Widget loads here</p>
+                    <p class="text-xs mt-2">Widget receives all user data from window.testResults</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="bg-white rounded-lg card-shadow p-8 text-center">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Ready to Transform Your Business?</h3>
+            <p class="text-lg text-gray-600 mb-6">Take the next step with our comprehensive transformation program</p>
+            <a href="https://your-funnel-page.com" target="_blank" 
+               class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-4 px-8 rounded-lg hover:shadow-lg transition-all duration-300">
+                Get Started Now →
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 AI Business Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript to populate dynamic content -->
+    <script>
+        // Populate user data from embedded results
+        document.getElementById('user-name').textContent = window.testResults.contactName;
+        document.getElementById('total-score').textContent = window.testResults.totalScore;
+        document.getElementById('potential-gains').textContent = window.testResults.roiAnalysis.potentialGains;
+        document.getElementById('implementation-cost').textContent = window.testResults.roiAnalysis.implementationCost;
+        document.getElementById('payback-period').textContent = window.testResults.roiAnalysis.paybackPeriod;
+
+        // Populate categories
+        const categoriesGrid = document.getElementById('categories-grid');
+        Object.entries(window.testResults.categories).forEach(([category, data]) => {
+            const percentage = Math.round((data.score / data.max) * 100);
+            const categoryDiv = document.createElement('div');
+            categoryDiv.className = 'p-4 bg-gray-50 rounded-lg';
+            categoryDiv.innerHTML = `
+                <h4 class="font-bold text-gray-800 mb-2">${category}</h4>
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-2xl font-bold text-blue-600">${data.score}/${data.max}</span>
+                    <span class="text-sm font-medium text-gray-600">${percentage}%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: ${percentage}%"></div>
+                </div>
+            `;
+            categoriesGrid.appendChild(categoryDiv);
+        });
+
+        // Populate recommendations
+        const recommendationsList = document.getElementById('recommendations-list');
+        window.testResults.recommendations.forEach((rec, index) => {
+            const recDiv = document.createElement('div');
+            recDiv.className = 'flex items-start space-x-3 p-4 bg-blue-50 rounded-lg';
+            recDiv.innerHTML = `
+                <span class="flex-shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">${index + 1}</span>
+                <p class="text-gray-800">${rec}</p>
+            `;
+            recommendationsList.appendChild(recDiv);
+        });
+
+        // Initialize Vapi widget with user context (pseudo-code)
+        // window.vapiWidget.init({
+        //     contactName: window.testResults.contactName,
+        //     contactId: window.testResults.contactId,
+        //     testScore: window.testResults.totalScore,
+        //     subscriptionLevel: window.testResults.subscriptionLevel,
+        //     categories: window.testResults.categories,
+        //     mode: window.testResults.subscriptionLevel === 'advanced' ? 'voice' : 'chat'
+        // });
+    </script>
+</body>
+</html>
