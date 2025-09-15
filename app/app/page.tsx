@@ -1,119 +1,337 @@
 
-import Link from 'next/link';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Brain, Zap, Star, ArrowRight } from 'lucide-react';
+'use client';
 
-export default function HomePage() {
-  const exampleUrls = [
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { 
+  Brain, 
+  Users, 
+  TrendingUp, 
+  Shield, 
+  Clock, 
+  Trophy,
+  Sparkles,
+  Target,
+  BookOpen,
+  BarChart3,
+  Zap,
+  ExternalLink
+} from 'lucide-react'
+
+export default function Home() {
+  const testUsers = [
     {
-      title: "Free Tier Example",
-      description: "Basic results display with limited features",
-      url: "/results?contact=john.doe@example.com&session=12345&level=free",
-      icon: Brain,
-      color: "bg-blue-50 border-blue-200"
+      name: "John Smith",
+      contactId: "12345",
+      sessionId: "session001", 
+      score: 125,
+      level: "free",
+      description: "Average user, free tier"
     },
     {
-      title: "Basic Tier Example", 
-      description: "Enhanced results with additional widgets",
-      url: "/results?contact=jane.smith@example.com&session=67890&level=basic",
-      icon: Zap,
-      color: "bg-purple-50 border-purple-200"
+      name: "Sarah Johnson", 
+      contactId: "67890",
+      sessionId: "session002",
+      score: 142,
+      level: "basic", 
+      description: "High performer, basic plan with chat"
     },
     {
-      title: "Advanced Tier Example",
-      description: "Premium layout with comprehensive analytics",
-      url: "/results?contact=alex.johnson@example.com&session=11111&level=advanced",
-      icon: Star,
-      color: "bg-amber-50 border-amber-200"
+      name: "Mike Chen",
+      contactId: "11111", 
+      sessionId: "session003",
+      score: 98,
+      level: "free",
+      description: "Lower score, needs encouragement"
+    },
+    {
+      name: "Emily Davis",
+      contactId: "22222",
+      sessionId: "session004", 
+      score: 156,
+      level: "advanced",
+      description: "Exceptional score, advanced plan with voice"
+    },
+    {
+      name: "Alex Rodriguez",
+      contactId: "33333",
+      sessionId: "session005",
+      score: 110, 
+      level: "basic",
+      description: "Average score, basic plan with chat"
     }
-  ];
+  ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      {/* Header */}
-      <div className="bg-white border-b border-slate-200">
-        <div className="max-w-4xl mx-auto px-6 py-8">
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-4">
-              <Brain className="h-12 w-12 text-blue-600 mr-3" />
-              <h1 className="text-4xl font-bold text-slate-900">AI IQ Test Results</h1>
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-slate-50">
+      {/* Hero Section */}
+      <div className="relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5"></div>
+        <div className="relative max-w-7xl mx-auto px-6 py-16">
+          <div className="text-center space-y-8">
+            {/* Main Title */}
+            <div className="space-y-4">
+              <div className="flex justify-center">
+                <Badge className="bg-blue-100 text-blue-800 border-blue-200 px-4 py-2">
+                  <Brain className="h-4 w-4 mr-2" />
+                  IQ Test Results Mockup
+                </Badge>
+              </div>
+              
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent leading-tight">
+                Test Results
+                <br />
+                Page Demo
+              </h1>
+              
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                This is a mockup demonstrating how unique test results pages work with different users and service levels. 
+                Each URL loads different data and shows appropriate widgets (chat vs voice AI).
+              </p>
             </div>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Test page structure for displaying personalized AI IQ test results with different service level templates
-            </p>
           </div>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl font-semibold text-slate-800 mb-4">
-            Service Level Examples
+      {/* Test URLs Section */}
+      <div className="max-w-7xl mx-auto px-6 py-20">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            Test Different Users & Service Levels
           </h2>
-          <p className="text-slate-600">
-            Click the examples below to see how different service levels display test results
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Click the links below to see how the page changes for different users and subscription levels. 
+            Each loads unique data and shows appropriate widgets.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {exampleUrls.map((example, index) => {
-            const Icon = example.icon;
-            return (
-              <Card key={index} className={`${example.color} hover:shadow-lg transition-shadow duration-200`}>
-                <CardHeader className="text-center">
-                  <Icon className="h-12 w-12 mx-auto mb-3 text-slate-700" />
-                  <CardTitle className="text-slate-800">{example.title}</CardTitle>
-                  <CardDescription className="text-slate-600">
-                    {example.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <Link href={example.url}>
-                    <Button variant="outline" className="w-full group">
-                      View Results
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testUsers.map((user, index) => (
+            <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <div className="flex justify-between items-start mb-2">
+                  <CardTitle className="text-lg">{user.name}</CardTitle>
+                  <Badge className={`${
+                    user.level === 'advanced' ? 'bg-amber-100 text-amber-800' :
+                    user.level === 'basic' ? 'bg-purple-100 text-purple-800' :
+                    'bg-blue-100 text-blue-800'
+                  }`}>
+                    {user.level === 'advanced' ? 'Advanced Plan' :
+                     user.level === 'basic' ? 'Basic Plan' : 'Free Tier'}
+                  </Badge>
+                </div>
+                <CardDescription className="text-sm">
+                  {user.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-blue-600 mb-1">{user.score}</div>
+                    <div className="text-sm text-slate-600">IQ Score</div>
+                  </div>
+                  
+                  <div className="text-xs text-slate-500 space-y-1">
+                    <div><strong>Contact:</strong> {user.contactId}</div>
+                    <div><strong>Session:</strong> {user.sessionId}</div>
+                    <div><strong>Level:</strong> {user.level}</div>
+                  </div>
+                  
+                  <Link href={`/results?contact=${user.contactId}&session=${user.sessionId}&level=${user.level}`}>
+                    <Button className="w-full" variant={user.level === 'advanced' ? 'default' : 'outline'}>
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      View Results Page
                     </Button>
                   </Link>
-                </CardContent>
-              </Card>
-            );
-          })}
+                  
+                  {user.level !== 'free' && (
+                    <div className="text-xs text-center text-slate-600">
+                      ✨ Includes {user.level === 'advanced' ? 'Voice' : 'Chat'} AI Assistant
+                    </div>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+          
+          {/* Invalid URL Test */}
+          <Card className="border-2 border-dashed border-slate-300">
+            <CardHeader>
+              <CardTitle className="text-lg text-slate-600">Invalid User Test</CardTitle>
+              <CardDescription className="text-sm">
+                Test error handling for non-existent user
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-slate-400 mb-1">???</div>
+                  <div className="text-sm text-slate-500">Not Found</div>
+                </div>
+                
+                <div className="text-xs text-slate-500 space-y-1">
+                  <div><strong>Contact:</strong> invalid123</div>
+                  <div><strong>Session:</strong> invalid456</div>
+                  <div><strong>Level:</strong> free</div>
+                </div>
+                
+                <Link href="/results?contact=invalid123&session=invalid456&level=free">
+                  <Button className="w-full" variant="outline">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Test Error Page
+                  </Button>
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
         </div>
+      </div>
 
-        {/* Technical Details */}
-        <Card className="bg-slate-50 border-slate-200">
-          <CardHeader>
-            <CardTitle className="text-slate-800">URL Parameter Structure</CardTitle>
-            <CardDescription>
-              The results page reads these URL parameters to customize the display:
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-3">
-                <div className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">
-                  contact
+      {/* Features Explanation */}
+      <div className="bg-slate-50 py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              What This Demo Shows
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              This mockup demonstrates the key functionality for your real AI IQ test results system.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 text-blue-600" />
                 </div>
-                <div className="text-slate-600">User's email address for personalization</div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">
-                  session
+                <CardTitle className="text-xl">Unique User Data</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  Each URL loads different user data with unique names, scores, and test results. 
+                  Shows personalized content for each contact.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <div className="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                  <Zap className="h-6 w-6 text-purple-600" />
                 </div>
-                <div className="text-slate-600">Unique session ID for test results</div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium">
-                  level
+                <CardTitle className="text-xl">Service Level Templates</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  Free tier shows basic results + upgrade prompts. Basic shows detailed analysis + chat AI. 
+                  Advanced shows complete analysis + voice AI.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <div className="bg-amber-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                  <Brain className="h-6 w-6 text-amber-600" />
                 </div>
-                <div className="text-slate-600">Service tier: free, basic, or advanced</div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+                <CardTitle className="text-xl">AI Widget Integration</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  Basic plan includes interactive chat AI that knows the user's test results. 
+                  Advanced plan includes voice AI assistant with full conversation capability.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <div className="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                  <Target className="h-6 w-6 text-green-600" />
+                </div>
+                <CardTitle className="text-xl">URL Parameter Handling</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  URLs contain contact ID, session ID, and service level. System loads appropriate 
+                  data and template based on these parameters.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <div className="bg-red-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                  <Shield className="h-6 w-6 text-red-600" />
+                </div>
+                <CardTitle className="text-xl">Error Handling</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  Graceful handling of invalid URLs with helpful error messages and 
+                  available test data options for debugging.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <div className="bg-teal-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                  <BarChart3 className="h-6 w-6 text-teal-600" />
+                </div>
+                <CardTitle className="text-xl">Supabase Ready</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  Built as a static Next.js app that can be easily hosted on Supabase. 
+                  Ready for your real data integration and deployment.
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+
+      {/* Next Steps */}
+      <div className="bg-gradient-to-r from-blue-600 to-purple-600 py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Build the Real System?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            This mockup demonstrates all the key functionality. The next step is building the real system 
+            with your AI IQ test data, Supabase integration, and Vapi voice agents.
+          </p>
+          
+          <div className="text-left bg-white/10 rounded-lg p-6 mb-8">
+            <h3 className="text-lg font-semibold text-white mb-4">What's Working:</h3>
+            <ul className="text-blue-100 space-y-2 text-sm">
+              <li>✅ URL parameter handling (contact, session, level)</li>
+              <li>✅ Dynamic user data loading</li>  
+              <li>✅ Service level templates (free, basic, advanced)</li>
+              <li>✅ Chat AI widget (basic plan)</li>
+              <li>✅ Voice AI widget (advanced plan)</li>
+              <li>✅ Error handling for invalid URLs</li>
+              <li>✅ Supabase hosting compatible</li>
+            </ul>
+          </div>
+          
+          <Button 
+            size="lg" 
+            className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg"
+            onClick={() => {
+              alert('This is a mockup. In the real project, this would provide detailed technical specifications.');
+            }}
+          >
+            <Sparkles className="mr-2 h-5 w-5" />
+            Get Detailed Specifications
+          </Button>
+        </div>
       </div>
     </div>
-  );
+  )
 }
+

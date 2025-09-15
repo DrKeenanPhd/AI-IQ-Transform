@@ -1,47 +1,11 @@
 
-import NextAuth from 'next-auth'
-import CredentialsProvider from 'next-auth/providers/credentials'
+// Auth route removed for mockup
+// This is just a test app for demonstrating page structure
 
-const authOptions = {
-  providers: [
-    CredentialsProvider({
-      name: 'credentials',
-      credentials: {
-        email: { label: 'Email', type: 'email' },
-        password: { label: 'Password', type: 'password' }
-      },
-      async authorize(credentials) {
-        // This is a mockup - always return success for testing
-        if (credentials?.email && credentials?.password) {
-          return {
-            id: '1',
-            email: credentials.email,
-            name: 'Test User'
-          }
-        }
-        return null
-      }
-    })
-  ],
-  pages: {
-    signIn: '/',
-    signUp: '/',  
-    error: '/',
-  },
-  callbacks: {
-    async signIn() {
-      return true; // Allow signin for testing
-    },
-    async session({ session, token }: any) {
-      return session
-    },
-    async jwt({ token }: any) {
-      return token
-    },
-  },
-  secret: process.env.NEXTAUTH_SECRET,
+export async function GET() {
+  return Response.json({ message: 'Auth not needed for this mockup' })
 }
 
-const handler = NextAuth(authOptions)
-
-export { handler as GET, handler as POST }
+export async function POST() {
+  return Response.json({ message: 'Auth not needed for this mockup' })
+}
