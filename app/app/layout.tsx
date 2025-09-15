@@ -5,8 +5,8 @@ import { ThemeProvider } from '@/components/theme-provider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: "AI IQ Test Results - Mockup",
-  description: "Test page structure for displaying AI IQ test results with different service levels",
+  title: "🧪 EVALUATION ONLY - Deployment Pipeline Test",
+  description: "Testing Vercel deployment, URL handling, integrations (GitHub, GHL, Vapi, Supabase) - NOT PRODUCTION",
 }
 
 export default function RootLayout({

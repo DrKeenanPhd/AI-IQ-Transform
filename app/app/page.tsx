@@ -74,21 +74,21 @@ export default function Home() {
             {/* Main Title */}
             <div className="space-y-4">
               <div className="flex justify-center">
-                <Badge className="bg-blue-100 text-blue-800 border-blue-200 px-4 py-2">
-                  <Brain className="h-4 w-4 mr-2" />
-                  IQ Test Results Mockup
+                <Badge className="bg-red-100 text-red-800 border-red-200 px-4 py-2">
+                  <Zap className="h-4 w-4 mr-2" />
+                  EVALUATION ONLY - Pipeline Test
                 </Badge>
               </div>
               
               <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent leading-tight">
-                Test Results
+                🧪 EVALUATION ONLY
                 <br />
-                Page Demo
+                Deployment Test
               </h1>
               
               <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                This is a mockup demonstrating how unique test results pages work with different users and service levels. 
-                Each URL loads different data and shows appropriate widgets (chat vs voice AI).
+                🚧 TESTING PIPELINE: Vercel deployment, URL handling, static/dynamic functionality, integrations (GitHub, GHL, Vapi, Supabase). 
+                Content and features are placeholder only - NOT PRODUCTION READY.
               </p>
             </div>
           </div>
@@ -99,11 +99,11 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-            Test Different Users & Service Levels
+            🧪 Testing URL Parameters & Dynamic Loading
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Click the links below to see how the page changes for different users and subscription levels. 
-            Each loads unique data and shows appropriate widgets.
+            Testing deployment functionality: URL parameter handling, dynamic data loading, template switching.
+            <br /><strong>⚠️ PLACEHOLDER CONTENT - Testing deployment pipeline only</strong>
           </p>
         </div>
 
