@@ -1,7 +1,7 @@
 {
-  "buildCommand": "cd app && yarn build",
+  "buildCommand": "cd app && npm run build",
   "outputDirectory": "app/.next",
-  "installCommand": "cd app && yarn install",
+  "installCommand": "cd app && npm install",
   "framework": "nextjs",
   "rewrites": [
     {
