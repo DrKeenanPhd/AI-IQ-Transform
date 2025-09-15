@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic vs Static - A/B Comparison</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .comparison-frame { height: 500px; border: 2px solid #e2e8f0; border-radius: 8px; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-slate-900 mb-4">
+                Dynamic App vs Static HTML - A/B Comparison
+            </h1>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                See the difference between your current dynamic Next.js app (left) and what static HTML files 
+                would look like for Supabase hosting (right).
+            </p>
+        </div>
+
+        <!-- Comparison Grid -->
+        <div class="grid lg:grid-cols-2 gap-8 mb-12">
+            <!-- Dynamic App Side -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-2xl font-bold text-blue-600">🚀 Dynamic Next.js App</h2>
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                        Current Version
+                    </span>
+                </div>
+                
+                <iframe 
+                    src="/results?contact=12345&session=session001&level=free" 
+                    class="comparison-frame w-full"
+                    title="Dynamic App Preview"
+                ></iframe>
+                
+                <div class="mt-4 space-y-3">
+                    <h3 class="font-semibold text-slate-800">✅ What Works:</h3>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                        <li>• Real-time URL parameter processing</li>
+                        <li>• Dynamic data loading from mock database</li>
+                        <li>• Interactive AI widgets</li>
+                        <li>• Server-side rendering</li>
+                        <li>• Full React interactivity</li>
+                    </ul>
+                    
+                    <h3 class="font-semibold text-slate-800">❌ Limitations:</h3>
+                    <ul class="text-sm text-red-600 space-y-1">
+                        <li>• Requires server hosting (can't use Supabase Storage)</li>
+                        <li>• More complex deployment</li>
+                        <li>• Higher hosting costs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Static HTML Side -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-2xl font-bold text-green-600">📄 Static HTML Files</h2>
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                        Supabase Compatible
+                    </span>
+                </div>
+                
+                <iframe 
+                    src="contact12345-session001-free.html" 
+                    class="comparison-frame w-full"
+                    title="Static HTML Preview"
+                ></iframe>
+                
+                <div class="mt-4 space-y-3">
+                    <h3 class="font-semibold text-slate-800">✅ What Works:</h3>
+                    <ul class="text-sm text-slate-600 space-y-1">
+                        <li>• Individual HTML files per user/session</li>
+                        <li>• Can be hosted on Supabase Storage</li>
+                        <li>• Fast loading (no server processing)</li>
+                        <li>• Simple custom domain setup</li>
+                        <li>• No hosting complexity</li>
+                    </ul>
+                    
+                    <h3 class="font-semibold text-slate-800">❌ Limitations:</h3>
+                    <ul class="text-sm text-amber-600 space-y-1">
+                        <li>• No real-time data updates</li>
+                        <li>• Limited AI widget functionality</li>
+                        <li>• Must regenerate files for updates</li>
+                        <li>• No server-side authentication</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- URL Examples -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6">URL Structure Comparison</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-semibold text-blue-600 mb-3">Dynamic App URLs:</h3>
+                    <div class="bg-blue-50 p-4 rounded-lg text-sm space-y-2">
+                        <div class="font-mono text-blue-800">
+                            https://yourapp.com/results?contact=12345&session=001&level=free
+                        </div>
+                        <div class="font-mono text-blue-800">
+                            https://yourapp.com/results?contact=67890&session=002&level=basic
+                        </div>
+                        <div class="font-mono text-blue-800">
+                            https://yourapp.com/results?contact=11111&session=003&level=advanced
+                        </div>
+                        <p class="text-xs text-blue-600 mt-2">
+                            ℹ️ One app that generates different pages dynamically
+                        </p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-green-600 mb-3">Static HTML URLs:</h3>
+                    <div class="bg-green-50 p-4 rounded-lg text-sm space-y-2">
+                        <div class="font-mono text-green-800">
+                            https://results.yourdomain.com/contact12345-session001-free.html
+                        </div>
+                        <div class="font-mono text-green-800">
+                            https://results.yourdomain.com/contact67890-session002-basic.html
+                        </div>
+                        <div class="font-mono text-green-800">
+                            https://results.yourdomain.com/contact11111-session003-advanced.html
+                        </div>
+                        <p class="text-xs text-green-600 mt-2">
+                            ℹ️ Individual HTML files, one per user/session combination
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Test Links -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6">Test Both Versions</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-semibold text-blue-600 mb-3">Dynamic App Links:</h3>
+                    <div class="space-y-2">
+                        <a href="/results?contact=12345&session=session001&level=free" 
+                           target="_blank"
+                           class="block p-3 bg-blue-50 rounded-lg text-blue-800 hover:bg-blue-100 transition-colors">
+                            👤 John Smith (Free Tier)
+                        </a>
+                        <a href="/results?contact=67890&session=session002&level=basic" 
+                           target="_blank"
+                           class="block p-3 bg-blue-50 rounded-lg text-blue-800 hover:bg-blue-100 transition-colors">
+                            👤 Sarah Johnson (Basic Plan)
+                        </a>
+                        <a href="/results?contact=22222&session=session004&level=advanced" 
+                           target="_blank"
+                           class="block p-3 bg-blue-50 rounded-lg text-blue-800 hover:bg-blue-100 transition-colors">
+                            👤 Emily Davis (Advanced Plan)
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-green-600 mb-3">Static HTML Links:</h3>
+                    <div class="space-y-2">
+                        <a href="contact12345-session001-free.html" 
+                           target="_blank"
+                           class="block p-3 bg-green-50 rounded-lg text-green-800 hover:bg-green-100 transition-colors">
+                            📄 John Smith (Static HTML)
+                        </a>
+                        <a href="contact67890-session002-basic.html" 
+                           target="_blank"
+                           class="block p-3 bg-green-50 rounded-lg text-green-800 hover:bg-green-100 transition-colors">
+                            📄 Sarah Johnson (Static HTML)
+                        </a>
+                        <button 
+                           onclick="alert('Advanced plan static version not created yet - would include voice AI placeholder')"
+                           class="block w-full p-3 bg-gray-100 rounded-lg text-gray-600 text-left">
+                            📄 Emily Davis (Would be generated)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
