@@ -1,38 +1,33 @@
-# 🧪 EVALUATION ONLY - Deployment Pipeline Test
+# AI IQ Transform - Test Results Platform
 
-**⚠️ THIS IS NOT A PRODUCTION APPLICATION ⚠️**
+A Next.js application for displaying AI transformation assessment results with dynamic user experiences based on subscription levels.
 
-## Purpose
-Testing deployment pipeline and infrastructure capabilities:
+## Features
 
-- ✅ Vercel deployment functionality
-- ✅ GitHub integration and CI/CD
-- ✅ Custom domain setup (CNAME)
-- ✅ URL parameter handling
-- ✅ Static vs Dynamic content delivery
-- ✅ Next.js hybrid architecture
-- ✅ Integration readiness (GHL, Vapi, Supabase)
+- **Dynamic Results Pages**: Unique URLs per contact ID and session ID
+- **Subscription Tiers**: Different layouts for Free, Basic, and Pro users  
+- **AI Integration Ready**: Prepared for Vapi voice agent integration
+- **Responsive Design**: Built with Next.js 14 and Tailwind CSS
 
-## What This Tests
-1. **Deployment:** Can we deploy Next.js to Vercel successfully?
-2. **URLs:** Do dynamic routes work with parameters?
-3. **Templates:** Can we switch content based on URL params?
-4. **Static Generation:** Can we create/serve static HTML files?
-5. **Domain Setup:** Can we connect custom domains?
+## Technology Stack
 
-## What This Is NOT
-- ❌ Final content or copy
-- ❌ Production-ready features
-- ❌ Accurate business logic
-- ❌ Real user data or integrations
-- ❌ Polished design or UX
+- **Framework**: Next.js 14 with App Router
+- **Styling**: Tailwind CSS + shadcn/ui components
+- **Deployment**: Vercel-optimized
+- **Type Safety**: TypeScript
 
-## Next Steps
-Once deployment pipeline is confirmed working:
-1. Replace placeholder content with real specifications
-2. Integrate with actual APIs (GHL, Supabase, Vapi)
-3. Implement real authentication and data flows
-4. Polish design and user experience
+## Quick Start
 
----
-**This repository exists solely to validate technical deployment capabilities.**
+```bash
+npm install
+npm run dev
+```
+
+## Test URLs
+
+- Homepage: `http://localhost:3000/`
+- Results: `http://localhost:3000/results?contactId=12345&sessionId=session001&level=free`
+
+## Deployment
+
+Optimized for deployment on Vercel with automatic detection and build configuration.
