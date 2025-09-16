@@ -1,4 +1,8 @@
 
+// ⚠️ DEMO DATA ONLY - For Testing Pipeline Deployment
+// This file contains mock test results for infrastructure validation
+// Replace with real data integration in production
+
 export interface TestResult {
   contactId: string;
   sessionId: string;

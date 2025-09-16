@@ -459,6 +459,18 @@ function ResultsContent() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      {/* Demo Banner */}
+      <div className="bg-red-50 border-b border-red-200">
+        <div className="max-w-4xl mx-auto px-6 py-3">
+          <div className="flex items-center justify-center">
+            <Badge className="bg-red-100 text-red-800 border-red-200 px-4 py-2">
+              <Zap className="h-4 w-4 mr-2" />
+              DEMO RESULTS - Test Data Only
+            </Badge>
+          </div>
+        </div>
+      </div>
+      
       {/* Header */}
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-6 py-6">
