@@ -37,6 +37,16 @@
     ".build/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "*/node_modules-backup/**",
+    "*/.next-backup/**",
+    "*/components-backup/**",
+    "*/hooks-backup/**", 
+    "*/lib-backup/**",
+    "*/app-duplicate-backup/**",
+    "src-app/**",
+    "api.bak/**",
+    "results.bak/**",
+    "static_comparison/**"
   ]
 }
